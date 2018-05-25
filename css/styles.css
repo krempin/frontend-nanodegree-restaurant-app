@@ -3,8 +3,8 @@
 
 body,td,th,p{
 	font-family: Arial, Helvetica, sans-serif;
-  font-size: 12px;
-  font-size: 0.75rem;
+  font-size: 14px;
+  font-size: 0.875rem;
 	color: #333;
 	line-height: 1.5;
 }
@@ -15,8 +15,8 @@ body {
 }
 ul, li {
 	font-family: Arial, Helvetica, sans-serif;
-  font-size: 12px;
-  font-size: 0.75rem;
+  font-size: 14px;
+  font-size: 0.875rem;
 	color: #333;
 }
 a {
@@ -136,7 +136,6 @@ nav h1 a {
   font-size: 0.8125rem;
   height: 35px;
   height: 2.1875rem;
-
   margin: 10px;
   margin: 0.625rem;
   padding: 0 10px;
@@ -148,32 +147,31 @@ nav h1 a {
 /* ====================== Restaurant Listing ====================== */
 #restaurants-list {
   background-color: #f3f3f3;
-  list-style: outside none none;
   margin: 0;
   padding: 32px;
   padding: 2rem;
   text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
-#restaurants-list li {
-  display: inline-block;
+#restaurants-list div {
   background-color: #fff;
   border: 2px solid #ccc;
   font-family: Arial,sans-serif;
-  margin: 0;
-  min-height: 380px;
-  min-height: 23.75rem;
   padding: 0 30px 25px;
   padding: 0 1.875rem 1.5625rem;
+  margin: 8px;
+  margin: 0.5rem;
   text-align: left;
-  width: 270px;
+  width: 250px;
+  width: 15.625rem;
 }
 #restaurants-list .restaurant-img {
   background-color: #ccc;
-  display: block;
-  margin: 0;
   width: 100%;
 }
-#restaurants-list li h1 {
+#restaurants-list div h1 {
   color: #f18200;
   font-family: Arial,sans-serif;
   font-size: 18px;
@@ -185,12 +183,8 @@ nav h1 a {
   margin: 1.25rem 0 0.625rem;
   text-transform: uppercase;
 }
-#restaurants-list p {
-  margin: 0;
-  font-size: 16px;
-  font-size: 1rem;
-}
-#restaurants-list li a {
+
+#restaurants-list div a {
   background-color: orange;
   border-bottom: 3px solid #eee;
   color: #fff;
@@ -230,7 +224,7 @@ nav h1 a {
 .inside #footer {
   bottom: 0;
   position: absolute;
-  width: 50%;
+  width: 100%;
 }
 #restaurant-name {
   color: #f18200;
