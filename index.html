@@ -20,17 +20,17 @@
 
 	  	<main id="maincontent">
 	    	<section id="map-container">
-	      		<div id="map" role="application" aria-label="Google Maps application for choosing between different restaurants"></div>
+	      		<div tabindex="0" id="map" role="application" aria-label="Google Maps application for choosing between different restaurants"></div>
 	    	</section>
 	    	<section>
 	      		<div id="skip-to-filter" class="filter-options" tabindex="-1">
 	        		<h2>Filter Results</h2>
 	        		<label for="neighborhoods-select">Neighborhood</label>
-	        		<select id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()">
+	        		<select id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()" aria-label="Select neighboorhood">
 	          			<option value="all">All Neighborhoods</option>
 	        		</select>
 	        		<label for="cuisines-select">Cuisine</label>
-	        		<select id="cuisines-select" name="cuisines" onchange="updateRestaurants()">
+	        		<select id="cuisines-select" name="cuisines" onchange="updateRestaurants()" aria-label="Select cuisine">
 	          			<option value="all">All Cuisines</option>
 	        		</select>
 	      		</div>
