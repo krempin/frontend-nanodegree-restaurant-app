@@ -189,7 +189,7 @@ nav h1 a {
   background-color: #ccc;
   width: 100%;
 }
-#restaurants-list div {
+#restaurants-list h3 {
   color: #f18200;
   font-family: Arial,sans-serif;
   font-size: 18px;
