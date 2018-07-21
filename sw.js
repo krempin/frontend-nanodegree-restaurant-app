@@ -1,6 +1,6 @@
 /* Cache files for offline mode */
 
-const staticCacheName = 'restaurant-app-v1';
+let staticCacheName = 'restaurant-app-v1';
 
 self.addEventListener('install', function(event) {
   event.waitUntil(
@@ -30,7 +30,32 @@ self.addEventListener('install', function(event) {
   );
 });
 
-/*
-self.addEventListener('fetch', function(event) {
+/* Delete old caches */
+
+self.addEventListener('activate', function(event) {
+  event.waitUntil(
+    caches.keys().then(function(cacheNames) {
+      return Promise.all(
+        cacheNames.filter(function(cacheName) {
+          return cacheName.startsWith('wittr-') &&
+                 !allCaches.includes(cacheName);
+        }).map(function(cacheName) {
+          return caches.delete(cacheName);
+        })
+      );
+    })
+  );
 });
-*/
+
+/* Respond with an entry from the cache if there is one 
+   If there isn`t, fetch from the network. */
+
+self.addEventListener('fetch', function(event) {
+
+  event.respondWith(
+    caches.match(event.request).then(function(response) {
+      if (response) return response;
+      return fetch(event.request);
+    })
+  );
+});
